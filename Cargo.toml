@@ -7,7 +7,7 @@ links = "marisa"
 build = "build.rs"
 
 [build-dependencies]
-gcc = "*"
+gcc = "0.3.1"
 
 [build-dependencies.libstdcpp-sys]
 git = "https://github.com/polachok/libstdcpp-sys"
