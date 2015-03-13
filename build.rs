@@ -10,4 +10,5 @@ fn main() {
                 .file("src/marisa.cc")
                 .include("src")
                 .compile("libmarisawrapper.a");
+    println!("cargo:rustc-flags=-l marisa");
 }
