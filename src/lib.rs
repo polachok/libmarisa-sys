@@ -21,6 +21,6 @@ extern "C" {
     pub fn set_query(agent: *const Agent, string: *const c_char);
     pub fn get_key(agent: *const Agent);
     pub fn get_value(key: *const Key) -> *const c_char;
-    pub fn predictive_search(trie: *const Trie, agent: *const Agent);
+    pub fn predictive_search(trie: *const Trie, agent: *const Agent) -> c_char; // bool
     pub fn key_destroy(key: *const Key);
 }
