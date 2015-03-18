@@ -31,7 +31,7 @@ extern "C" {
 
 	void keyset_destroy(KeySet *ks) {
 		delete(ks->keyset);
-		ks->keyset = NULL;
+		free(ks);
 	}
 
 	Trie *trie_create(void) {
@@ -51,7 +51,7 @@ extern "C" {
 
 	void trie_destroy(Trie *tr) {
 		delete(tr->trie);
-		tr->trie = NULL;
+		free(tr);
 	}
 
 	void trie_mmap(Trie *tr, const char *filename) {
@@ -64,6 +64,11 @@ extern "C" {
 		a->agent = new(marisa::Agent);
 
 		return a;
+	}
+
+	void agent_destroy(Agent *a) {
+		delete(a->agent);
+		free(a);
 	}
 
 	void set_query(Agent *a, const char *q) {
@@ -83,5 +88,9 @@ extern "C" {
 
 	bool predictive_search(Trie *t, Agent *a) {
 		t->trie->predictive_search(*a->agent);
+	}
+
+	void key_destroy(Key *key) {
+		free(key);
 	}
 }

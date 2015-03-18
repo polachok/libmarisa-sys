@@ -1,5 +1,6 @@
+#![feature(libc)]
 extern crate libc;
-use libc::{c_char, c_int, size_t};
+use libc::{c_char, c_int};
 
 #[repr(C)] pub struct KeySet;
 #[repr(C)] pub struct Trie;
