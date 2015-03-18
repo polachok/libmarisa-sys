@@ -16,4 +16,11 @@ extern "C" {
     pub fn trie_save(trie: *const Trie, filename: *const c_char);
     pub fn trie_destroy(trie: *const Trie);
     pub fn trie_mmap(trie: *const Trie, filename: *const c_char);
+    pub fn agent_create() -> *const Agent;
+    pub fn agent_destroy(agent: *const Agent);
+    pub fn set_query(agent: *const Agent, string: *const c_char);
+    pub fn get_key(agent: *const Agent);
+    pub fn get_value(key: *const Key) -> *const c_char;
+    pub fn predictive_search(trie: *const Trie, agent: *const Agent);
+    pub fn key_destroy(key: *const Key);
 }
