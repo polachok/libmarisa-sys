@@ -12,4 +12,5 @@ gcc = "0.3.1"
 [build-dependencies.libstdcpp-sys]
 git = "https://github.com/polachok/libstdcpp-sys"
 
-
+[dependencies]
+libc = "0.1.*"
