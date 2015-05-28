@@ -9,6 +9,7 @@ use libc::{c_char, c_int};
 extern "C" {
     pub fn keyset_create() -> *const KeySet;
     pub fn keyset_push(keyset: *const KeySet, string: *const c_char, len: c_int, val: c_int);
+    pub fn keyset_num_keys(keyset: *const KeySet);
     pub fn keyset_destroy(keyset: *const KeySet);
     pub fn trie_create() -> *const Trie;
     pub fn trie_build(trie: *const Trie, keyset: *const KeySet, options: c_int);

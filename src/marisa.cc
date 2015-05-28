@@ -29,6 +29,10 @@ extern "C" {
 		ks->keyset->push_back(str, len, value);
 	}
 
+	size_t keyset_num_keys(KeySet *ks) {
+		return ks->keyset->num_keys();
+	}
+
 	void keyset_destroy(KeySet *ks) {
 		delete(ks->keyset);
 		free(ks);
