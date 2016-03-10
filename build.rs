@@ -5,10 +5,10 @@
 extern crate gcc;
 
 fn main() {
-    //gcc::compile_library("libmarisawrapper.a", &["src/marisa.cc"]);
     gcc::Config::new()
                 .file("src/marisa.cc")
                 .include("src")
+                .cpp(true)
                 .compile("libmarisawrapper.a");
     println!("cargo:rustc-flags=-l marisa");
 }
